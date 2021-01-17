@@ -66,7 +66,7 @@ early_stopping = EarlyStopping(
     monitor="val_loss", patience=2, min_delta=0.001, mode="auto"
 )
 reduce_lr = ReduceLROnPlateau(monitor="val_loss", factor=0.2, patience=2, min_lr=0.001)
-csv_logger = CSVLogger("trainning_log.csv")
+csv_logger = CSVLogger("training_log.csv")
 
 history = model.fit(
     train_data_generator,
