@@ -1,15 +1,7 @@
 from typing import Tuple
 
 from tensorflow.keras.applications.inception_v3 import InceptionV3
-from tensorflow.keras.layers import (
-    BatchNormalization,
-    Conv2D,
-    Dense,
-    Dropout,
-    Flatten,
-    Input,
-    MaxPooling2D,
-)
+from tensorflow.keras.layers import Dense, Dropout, Flatten
 from tensorflow.keras.models import Model
 
 
