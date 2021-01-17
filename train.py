@@ -42,7 +42,7 @@ test_data_generator = data_generator.flow_from_directory(
     test_dir, batch_size=128, class_mode="categorical", target_size=(150, 150)
 )
 
-model = create_inception_model(image_size=IMAGE_SIZE, num_classes=num_classes)
+model = create_model(image_size=IMAGE_SIZE, num_classes=num_classes)
 print(model.summary())
 
 model.compile(loss="categorical_crossentropy", optimizer="adam", metrics=["accuracy"])
