@@ -11,6 +11,7 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from models import create_model
 
 dataset_dir = "datasets"
+model_dir = "models"
 
 _, test_folder, train_folder = sorted(os.listdir(dataset_dir))
 
@@ -47,9 +48,13 @@ print(model.summary())
 
 model.compile(loss="categorical_crossentropy", optimizer="adam", metrics=["accuracy"])
 
-best_model_path = "inception_best_model.h5"
+best_model_path = os.path.join(model_dir, "intel_img_clf_best_weight.h5")
 checkpoint_callback = ModelCheckpoint(
-    best_model_path, monitor="val_accuracy", save_best_only=True, verbose=1
+    best_model_path,
+    monitor="val_accuracy",
+    save_best_only=True,
+    save_weights_only=True,
+    verbose=1,
 )
 
 reduce_lr = ReduceLROnPlateau(
@@ -57,7 +62,7 @@ reduce_lr = ReduceLROnPlateau(
 )
 
 
-csv_logger = CSVLogger("training_log.csv")
+csv_logger = CSVLogger(os.path.join(model_dir, "training_log.csv"))
 
 history = model.fit(
     train_data_generator,

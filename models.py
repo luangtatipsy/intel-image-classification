@@ -12,8 +12,7 @@ def create_model(image_size: Tuple[int, int], num_classes: int) -> Model:
     for layer in inception_v3.layers:
         layer.trainable = False
 
-    # output = inception_v3.output
-    output = inception_v3.get_layer("mixed9").output
+    output = inception_v3.output
 
     x = Flatten()(output)
     x = Dense(1024, activation="relu")(x)
