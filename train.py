@@ -1,5 +1,6 @@
 import os
 
+from tensorflow.keras.applications.inception_v3 import preprocess_input
 from tensorflow.keras.callbacks import (
     CSVLogger,
     EarlyStopping,
@@ -12,6 +13,7 @@ from models import create_model
 
 dataset_dir = "datasets"
 model_dir = "models"
+log_dir = "logs"
 
 _, test_dir, train_dir = sorted(os.listdir(dataset_dir))
 
@@ -25,18 +27,18 @@ num_classes = len(classes)
 num_epochs = 15
 
 data_augment_generator = ImageDataGenerator(
-    rescale=1.0 / 255,
     width_shift_range=0.2,
     height_shift_range=0.2,
     zoom_range=0.2,
     vertical_flip=True,
+    preprocessing_function=preprocess_input,
     fill_mode="nearest",
 )
 
 train_data_generator = data_augment_generator.flow_from_directory(
     train_dir, batch_size=32, class_mode="categorical", target_size=(150, 150)
 )
-data_generator = ImageDataGenerator(rescale=1.0 / 255)
+data_generator = ImageDataGenerator(preprocessing_function=preprocess_input)
 
 test_data_generator = data_generator.flow_from_directory(
     test_dir, batch_size=128, class_mode="categorical", target_size=(150, 150)
@@ -61,7 +63,7 @@ reduce_lr = ReduceLROnPlateau(
 )
 
 
-csv_logger = CSVLogger(os.path.join(model_dir, "training_log.csv"))
+csv_logger = CSVLogger(os.path.join(log_dir, "training_log.csv"))
 
 history = model.fit(
     train_data_generator,
