@@ -1,3 +1,5 @@
-env
 __pycache__
+!models/.gitkeep
 .DS_Store
+env
+models/*
