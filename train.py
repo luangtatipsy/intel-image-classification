@@ -13,10 +13,10 @@ from models import create_model
 dataset_dir = "datasets"
 model_dir = "models"
 
-_, test_folder, train_folder = sorted(os.listdir(dataset_dir))
+_, test_dir, train_dir = sorted(os.listdir(dataset_dir))
 
-test_dir = os.path.join(dataset_dir, test_folder)
-train_dir = os.path.join(dataset_dir, train_folder)
+test_dir = os.path.join(dataset_dir, test_dir)
+train_dir = os.path.join(dataset_dir, train_dir)
 
 IMAGE_SIZE = (150, 150)
 
@@ -32,7 +32,6 @@ data_augment_generator = ImageDataGenerator(
     vertical_flip=True,
     fill_mode="nearest",
 )
-
 
 train_data_generator = data_augment_generator.flow_from_directory(
     train_dir, batch_size=32, class_mode="categorical", target_size=(150, 150)
