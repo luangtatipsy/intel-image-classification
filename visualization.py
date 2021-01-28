@@ -9,7 +9,7 @@ def display_images(
     paths,
     category,
     columns=10,
-    width=30,
+    width=20,
     height=5,
     max_images=20,
     label_wrap_length=50,
@@ -25,6 +25,7 @@ def display_images(
     height = max(height, int(len(images) / columns) * height)
     figure = plt.figure(figsize=(width, height))
     figure.suptitle(category.title(), fontsize=28, fontweight="bold")
+    figure.patch.set_facecolor("white")
 
     for i, image in enumerate(images):
         plt.subplot(len(images) / columns + 1, columns, i + 1)
@@ -42,3 +43,5 @@ def display_images(
 
     if save_figure:
         plt.savefig(os.path.join("results", "figures", f"{category}.png"))
+
+    plt.close()
