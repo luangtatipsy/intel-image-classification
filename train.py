@@ -1,12 +1,8 @@
 import os
 
 from tensorflow.keras.applications.inception_v3 import preprocess_input
-from tensorflow.keras.callbacks import (
-    CSVLogger,
-    EarlyStopping,
-    ModelCheckpoint,
-    ReduceLROnPlateau,
-)
+from tensorflow.keras.callbacks import (CSVLogger, ModelCheckpoint,
+                                        ReduceLROnPlateau)
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
 from models import create_model
