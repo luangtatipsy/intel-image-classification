@@ -740,4 +740,4 @@ What I mentioned above is a roughly observation. A confusion matrix heatmap show
 <img src="https://github.com/luangtatipsy/intel-image-classification/blob/master/results/figures/street.png" alt="street prediction figure" width="100%"/>
 
 ## License
-This repository is distributed under [MIT License](https://github.com/luangtatipsy/example-machine-learning-explainability/blob/master/LICENSE)
+This repository is distributed under [MIT License](https://github.com/luangtatipsy/intel-image-classification/blob/master/LICENSE)
