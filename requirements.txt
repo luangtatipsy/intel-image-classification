@@ -4,3 +4,4 @@ scikit-learn==0.24.1
 scipy==1.6.0
 seaborn==0.11.1
 tensorflow==2.4.0
+tensorflowjs==3.1.0
