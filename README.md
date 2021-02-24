@@ -739,5 +739,11 @@ What I mentioned above is a roughly observation. A confusion matrix heatmap show
 <img src="https://github.com/luangtatipsy/intel-image-classification/blob/master/results/figures/sea.png" alt="sea prediction figure" width="100%"/>
 <img src="https://github.com/luangtatipsy/intel-image-classification/blob/master/results/figures/street.png" alt="street prediction figure" width="100%"/>
 
+## Convert Model to TensorFlow JS
+In order to use model in front-end web application, the trained model has to be converted into [Tensorflow JS](https://www.tensorflow.org/js) format.
+```sh
+python converter.py
+```
+
 ## License
 This repository is distributed under [MIT License](https://github.com/luangtatipsy/intel-image-classification/blob/master/LICENSE)
