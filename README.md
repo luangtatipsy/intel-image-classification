@@ -714,7 +714,7 @@ python train.py
 ```
 
 ## Model Evaluation
-According to the classification report table below, the model yields 90.2% accuracy which can used in the real-world application. The model confidently classifies forest images, the highest F1-Score as 98.72%. On the other hands, model generally classifies incorrectly between glacier and mountain images.
+According to the classification report table below, the model yields 90.2% accuracy which can used in the real-world application. The model confidently classifies forest images, the highest F1-Score as 98.72%. On the other hand, model generally classifies incorrectly between glacier and mountain images.
 
 |              | precision | recall | f1-score | support |
 |--------------|:---------:|:------:|:--------:|:-------:|
