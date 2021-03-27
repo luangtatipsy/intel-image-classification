@@ -740,7 +740,7 @@ What I mentioned above is a roughly observation. A confusion matrix heatmap show
 <img src="https://github.com/luangtatipsy/intel-image-classification/blob/master/results/figures/street.png" alt="street prediction figure" width="100%"/>
 
 ## Convert Model to TensorFlow JS
-In order to use model in front-end web application, the trained model has to be converted into [Tensorflow JS](https://www.tensorflow.org/js) format.
+In order to use model in front-end web application, the trained model has to be converted into [Tensorflow JS](https://www.tensorflow.org/js) format. The converted TensorFlow JS model will be placed under `models` directory named `intel_img_clf_best_weight.js` by default.
 ```sh
 python converter.py
 ```
