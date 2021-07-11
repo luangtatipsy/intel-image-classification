@@ -9,7 +9,7 @@ https://luangtatipsy.github.io/intel-image-classification-web-app/
 ## Dataset Specification
 For this project, I modified the dataset directories a bit for more convenience. The dataset is distributed under `datasets` directory in `root` directory. Inside `datasets` there are 3 directories consisting of `seg_pred`, `seg_test`, and `seg_train` storing unseen images, test images, and training images respectively. Those directories contain 14,034, 3,000 and 7,301 images for training set, test set, and unseen images respectively. All images are sized 150x150.
 
-## Prerequisite
+## Prerequisites
 - Git
 - Python 3.8.7
 ## Setup
